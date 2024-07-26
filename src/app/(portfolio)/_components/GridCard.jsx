@@ -14,12 +14,12 @@ export default function GridCard({
           href={linkUrl}
           target="_blank"
           aria-label={`go to ${name}`}
-          className="relative col-span-1 min-h-[250px] p-[16px] rounded-xl flex justify-start items-end"
+          className="relative col-span-1 min-h-[250px] p-[16px] flex justify-start items-end"
           {...props}
         >
           {/* Image Bg */}
           <div
-            className="absolute inset-0 opacity-50 bg-center bg-cover bg-no-repeat"
+            className="absolute inset-0 opacity-50 bg-center bg-cover bg-no-repeat rounded-xl"
             style={{
               backgroundImage: `url(${imageUrl})`,
             }}
@@ -40,7 +40,7 @@ export default function GridCard({
         >
           {/* Image Bg */}
           <div
-            className="absolute inset-0 opacity-50 bg-center bg-cover bg-no-repeat"
+            className="absolute inset-0 opacity-50 bg-center bg-cover bg-no-repeat rounded-md"
             style={{
               backgroundImage: `url(${imageUrl})`,
             }}
