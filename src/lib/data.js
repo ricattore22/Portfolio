@@ -47,10 +47,10 @@ export const techStackLogo = [
     srcLogo: "zod",
     name: "Zod",
   },
-  {
-    srcLogo: "mysql",
-    name: "MySQL",
-  },
+  // {
+  //   srcLogo: "mysql",
+  //   name: "MySQL",
+  // },
   {
     srcLogo: "postgresql",
     name: "PostgreSQL",

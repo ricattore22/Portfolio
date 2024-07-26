@@ -190,10 +190,10 @@ function CustomNavigationMenuLink({
   );
 }
 
-function CustomDropdownLink({ href, className, children, ...props }) {
+function CustomDropdownLink({ href, children, ...props }) {
   return (
     <>
-      <DropdownMenuItem asChild>
+      <DropdownMenuItem className="py-[10px]" asChild>
         <Link href={href} {...props}>
           {children}
         </Link>

@@ -6,7 +6,7 @@ export default function AvailableForWork({ available }) {
     <>
       <Badge
         variant="outline"
-        className="px-[16px] py-[8px] border-2 border-primary font-bold text-[12px] sm:text-[14px] gap-[12px]"
+        className="px-[12px] py-[4px] border-2 border-primary font-bold text-[12px] sm:text-[14px] gap-[12px]"
       >
         <div
           className={cn(

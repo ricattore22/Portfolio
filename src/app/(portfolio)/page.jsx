@@ -6,7 +6,6 @@ import StackIcon from "tech-stack-icons";
 import { techStackLogo } from "@/lib/data";
 
 import { Separator } from "@/components/ui/separator";
-import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Highlight } from "@/components/ui/hero-highlight";
@@ -15,6 +14,7 @@ import BgParticles from "@/components/magicui/BgParticles";
 
 import HeadSection from "@/components/ui-custom/HeadSection";
 import AvailableForWork from "@/components/ui-custom/AvailableForWork";
+import GridCard from "./_components/GridCard";
 
 import { FaEnvelope, FaLinkedin } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
@@ -119,15 +119,26 @@ function About() {
             </p>
             <p>Feel free to reach me out below...</p>
             <div className="flex items-center gap-[8px]">
-              <Link href="" aria-label="go to Email">
+              <Link
+                href="mailto:ricattore22@gmail.com"
+                aria-label="go to Email"
+              >
                 <FaEnvelope className="text-[32px]" />
               </Link>
-              <Link href="" aria-label="go to LinkedIn">
+              <Link
+                href="https://www.linkedin.com/in/richards-griffiano-9893271b8"
+                aria-label="go to LinkedIn"
+                target="_blank"
+              >
                 <FaLinkedin className="pl-[4px] text-[30px]" />
               </Link>
-              <Link href="" aria-label="go to Instagram">
+              {/* <Link
+                href="https://www.instagram.com/richards_gt/"
+                aria-label="go to Instagram"
+                target="_blank"
+              >
                 <AiFillInstagram className="text-[34px]" />
-              </Link>
+              </Link> */}
             </div>
           </div>
         </BlurFade>
@@ -233,19 +244,22 @@ function Education() {
 
 // For "ProjectWork" section
 const listProjectWork = [
-  // {
-  //   linkUrl: "/",
-  //   imageUrl: "/p2-portfolio.png",
-  //   type: "Personal Website",
-  //   name: "My Portfolio",
-  //   my: "Work",
-  // },
+  {
+    imageUrl: "/p2-portfolio.png",
+    type: "Personal Website",
+    name: "My Portfolio",
+  },
   {
     linkUrl: "https://rajaherbalmanado.com",
     imageUrl: "/p1-raja-herbal.png",
     type: "Business Website",
     name: "Raja Herbal Manado",
-    my: "Work",
+  },
+  {
+    // On Going...
+    imageUrl: "/ongoing-p.png",
+    type: "Ecommerce Website",
+    name: "On Going...",
   },
 ];
 
@@ -267,53 +281,17 @@ function ProjectWork() {
           inView
           className="w-full grid grid-cols-1 sm-d:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[24px]"
         >
-          <DirectionAwareHover
-            imageUrl="/p2-portfolio.png"
-            className="w-full h-[250px]"
-            childrenClassName="space-y-[8px]"
-          >
-            <Badge className="bg-pf-blue text-white">Work</Badge>
-            <div className="space-y-[4px]">
-              <p className="font-bold text-[16px]">Personal Website</p>
-              <p className="font-medium text-[14px]">My Portfolio</p>
-            </div>
-          </DirectionAwareHover>
-
           {listProjectWork.map((pw, idx) => {
             return (
-              <Link
+              <GridCard
                 key={idx}
-                href={pw.linkUrl}
-                target="_blank"
-                aria-label={`go to ${pw.name}`}
-                className="h-[250px]"
-              >
-                <DirectionAwareHover
-                  imageUrl={pw.imageUrl}
-                  className="w-full h-full"
-                  childrenClassName="space-y-[8px]"
-                >
-                  <Badge className="bg-pf-blue text-white">{pw.my}</Badge>
-                  <div className="space-y-[4px]">
-                    <p className="font-bold text-[16px]">{pw.type}</p>
-                    <p className="font-medium text-[14px]">{pw.name}</p>
-                  </div>
-                </DirectionAwareHover>
-              </Link>
+                type={pw.type}
+                name={pw.name}
+                imageUrl={pw.imageUrl}
+                linkUrl={pw.linkUrl}
+              />
             );
           })}
-
-          <DirectionAwareHover
-            imageUrl="/ongoing-p.png"
-            className="w-full h-[250px]"
-            childrenClassName="space-y-[8px]"
-          >
-            <Badge className="bg-pf-blue text-white">Project</Badge>
-            <div className="space-y-[4px]">
-              <p className="font-bold text-[16px]">Ecommerce Website</p>
-              <p className="font-medium text-[14px]">On Going...</p>
-            </div>
-          </DirectionAwareHover>
         </BlurFade>
       </div>
     </>
